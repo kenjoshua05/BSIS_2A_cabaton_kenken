@@ -1,0 +1,22 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color:rgba(34, 194, 197, 0.945);
+    height: 100vh;
+    overflow: hidden;
+}
+
+.registration{
+    padding-top: 1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 480px;
+    height: 600px;
+    background-color: rgb(248, 103, 154);
+    border-radius: 10px;
+}
+
+
