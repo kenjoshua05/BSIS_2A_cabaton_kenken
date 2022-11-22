@@ -66,17 +66,17 @@
                     </td>
                 </tr>
 
-                <tr>
+                <tr class="input-group">
                     <td>Qty</td>
                     <td>
-                        <input type="number" name="qty" value="<?php echo $qty; ?>">
+                        <input class="input-group" type="number" name="qty" value="<?php echo $qty; ?>">
                     </td>
                 </tr>
 
                 <tr>
                     <td>Status</td>
                     <td>
-                        <select name="status">
+                        <select class="input-group" name="status">
                             <option <?php if($status=="Ordered"){echo "selected";} ?> value="Ordered">Ordered</option>
                             <option <?php if($status=="On Delivery"){echo "selected";} ?> value="On Delivery">On Delivery</option>
                             <option <?php if($status=="Delivered"){echo "selected";} ?> value="Delivered">Delivered</option>
@@ -88,28 +88,28 @@
                 <tr>
                     <td>Customer Name: </td>
                     <td>
-                        <input type="text" name="customer_name" value="<?php echo $customer_name; ?>">
+                        <input class="input-group" type="text" name="customer_name" value="<?php echo $customer_name; ?>">
                     </td>
                 </tr>
 
                 <tr>
                     <td>Customer Contact: </td>
                     <td>
-                        <input type="text" name="customer_contact" value="<?php echo $customer_contact; ?>">
+                        <input class="input-group" type="text" name="customer_contact" value="<?php echo $customer_contact; ?>">
                     </td>
                 </tr>
 
                 <tr>
                     <td>Customer Email: </td>
                     <td>
-                        <input type="text" name="customer_email" value="<?php echo $customer_email; ?>">
+                        <input class="input-group" class="input-group" type="text" name="customer_email" value="<?php echo $customer_email; ?>">
                     </td>
                 </tr>
 
                 <tr>
                     <td>Customer Address: </td>
                     <td>
-                        <textarea name="customer_address" cols="30" rows="5"><?php echo $customer_address; ?></textarea>
+                        <textarea class="desc" name="customer_address" cols="30" rows="5"><?php echo $customer_address; ?></textarea>
                     </td>
                 </tr>
 
@@ -118,7 +118,7 @@
                         <input type="hidden" name="id" value="<?php echo $id; ?>">
                         <input type="hidden" name="price" value="<?php echo $price; ?>">
 
-                        <input type="submit" name="submit" value="Update Order" class="btn-secondary">
+                        <input type="submit" name="submit" value="Update Order" class="btn">
                     </td>
                 </tr>
             </table>
@@ -140,10 +140,10 @@
 
                 $status = $_POST['status'];
 
-                $customer_name = $_POST['customer_name'];
-                $customer_contact = $_POST['customer_contact'];
-                $customer_email = $_POST['customer_email'];
-                $customer_address = $_POST['customer_address'];
+                $customer_name = mysqli_real_escape_string($conn, $_POST['customer_name']);
+                $customer_contact = mysqli_real_escape_string($conn, $_POST['customer_contact']);
+                $customer_email = mysqli_real_escape_string($conn, $_POST['customer_email']);
+                $customer_address = mysqli_real_escape_string($conn, $_POST['customer_address']);
 
                 //Update the Values
                 $sql2 = "UPDATE tbl_order SET 

@@ -18,8 +18,9 @@
         <div class="container">
             <div class="logo">
                 <a href="#" title="Logo">
-                    <img src="images/logo.png" alt="Restaurant Logo" class="img-responsive">
+                    <img src="images/logo.jpg" alt="Restaurant Logo" class="img-responsive">
                 </a>
+
             </div>
 
             <div class="menu text-right">
@@ -37,12 +38,8 @@
                         <a href="#">Contact</a>
                     </li>
                     <li>
-                        <a href="#">Login</a>
-                    </li>
-                    <li>
-                        <a href="<?php echo SITEURL; ?>admin/index.php">Admin</a>
-                    </li>
-                </ul>
+                        <a href="registration/login.php?logout='1'">Logout</a>
+                    
             </div>
 
             <div class="clearfix"></div>

@@ -1,6 +1,6 @@
 <?php include('../config/constants.php'); ?>
 
-<html>
+<html class="body">
     <head>
         <title>Login - Food Order System</title>
         <link rel="stylesheet" href="../css/admin.css">
@@ -30,12 +30,12 @@
             <!-- Login Form Starts HEre -->
             <form action="" method="POST" class="text-center">
             Username: <br>
-            <input type="text" name="username" placeholder="Enter Username"><br><br>
+            <input class="input-group" type="text" name="username" placeholder="Enter Username"><br><br>
 
             Password: <br>
-            <input type="password" name="password" placeholder="Enter Password"><br><br>
+            <input class="input-group" type="password" name="password" placeholder="Enter Password"><br><br>
 
-            <input type="submit" name="submit" value="Login" class="btn-primary">
+            <input class="btn" type="submit" name="submit" value="Login" class="btn-primary">
             <br><br>
             </form>
             <!-- Login Form Ends HEre -->
@@ -53,7 +53,7 @@
     {
         //Process for Login
         //1. Get the Data from Login form
-        $username = $_POST['username'];
+        $username = mysqli_real_escape_string($conn, $_POST['username']);
         $password = md5($_POST['password']);
 
         //2. SQL to check whether the user with username and password exists or not

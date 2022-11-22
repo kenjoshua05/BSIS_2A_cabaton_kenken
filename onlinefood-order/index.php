@@ -1,5 +1,6 @@
     <?php include('partials-front/menu.php'); ?>
 
+
     <!-- fOOD sEARCH Section Starts Here -->
     <section class="food-search text-center">
         <div class="container">
@@ -12,14 +13,6 @@
         </div>
     </section>
     <!-- fOOD sEARCH Section Ends Here -->
-
-    <?php 
-        if(isset($_SESSION['order']))
-        {
-            echo $_SESSION['order'];
-            unset($_SESSION['order']);
-        }
-    ?>
 
     <!-- CAtegories Section Starts Here -->
     <section class="categories">
@@ -139,7 +132,7 @@
 
                         <div class="food-menu-desc">
                             <h4><?php echo $title; ?></h4>
-                            <p class="food-price">$<?php echo $price; ?></p>
+                            <p class="food-price">₱<?php echo $price; ?></p>
                             <p class="food-detail">
                                 <?php echo $description; ?>
                             </p>

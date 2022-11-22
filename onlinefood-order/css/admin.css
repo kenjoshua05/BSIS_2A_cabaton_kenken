@@ -139,3 +139,45 @@ table tr td {
   margin: 10% auto;
   padding: 2%;
 }
+.header {
+  width: 30%;
+  margin: 50px auto 0px;
+  color: white;
+  background: skyblue;
+  text-align: center;
+  border: 1px solid #B0C4DE;
+  border-bottom: none;
+  border-radius: 10px 10px 0px 0px;
+  padding: 50px;
+}
+.body{
+  background-image: url(../images/background.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 7% 0;
+}
+.input-group{
+  margin: 10px 0px 10px 0px;
+  height: 30px;
+  width: 93%;
+  padding: 5px 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid gray;
+}
+.btn{
+    padding: 10px;
+    font-size: 15px;
+    color: white;
+    background: rgb(203, 75, 75);
+    border: none;
+    border-radius: 5px;
+  }
+.desc{
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  width: 93%;
+}
+

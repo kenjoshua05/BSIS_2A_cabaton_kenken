@@ -20,9 +20,9 @@
                         <th width="5%">#</th>
                         <th width="10%">Order Date</th>
                         <th width="10%">Food</th>
-                        <th width="5%">Price</th>
-                        <th width="5%">Qty</th>
-                        <th width="6%">Total</th>
+                        <th width="7%">Price</th>
+                        <th width="4%">Qty</th>
+                        <th width="7%">Total</th>
                         <th width="8%">Status</th>
                         <th width="10%">Customer</th>
                         <th width="10%">Contact</th>
@@ -65,9 +65,9 @@
                                         <td><?php echo $sn++; ?> </td>
                                         <td><?php echo $order_date; ?></td>
                                         <td><?php echo $food; ?></td>
-                                        <td><?php echo '$'.$price; ?></td>
+                                        <td><?php echo '₱'.$price; ?></td>
                                         <td><?php echo $qty; ?></td>
-                                        <td><?php echo '$'.$total; ?></td>
+                                        <td><?php echo '₱'.$total; ?></td>
                                         
 
                                         <td>

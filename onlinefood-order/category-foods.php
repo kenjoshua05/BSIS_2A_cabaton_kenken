@@ -1,5 +1,4 @@
-    
-    <?php include('partials-front/menu.php'); ?>
+  <?php include('partials-front/menu.php'); ?>
 
     <?php 
         //CHeck whether id is passed or not

@@ -45,21 +45,21 @@
             <tr>
                 <td>Title: </td>
                 <td>
-                    <input type="text" name="title" value="<?php echo $title; ?>">
+                    <input class="input-group" type="text" name="title" value="<?php echo $title; ?>">
                 </td>
             </tr>
 
             <tr>
                 <td>Description: </td>
                 <td>
-                    <textarea name="description" cols="30" rows="5"><?php echo $description; ?></textarea>
+                    <textarea class="desc" name="description" cols="30" rows="5"><?php echo $description; ?></textarea>
                 </td>
             </tr>
 
             <tr>
                 <td>Price: </td>
                 <td>
-                    <input type="number" name="price" value="<?php echo $price; ?>">
+                    <input class="input-group" type="number" name="price" value="<?php echo $price; ?>">
                 </td>
             </tr>
 
@@ -93,7 +93,7 @@
             <tr>
                 <td>Category: </td>
                 <td>
-                    <select name="category">
+                    <select class="input-group"name="category">
 
                         <?php 
                             //Query to Get ACtive Categories
@@ -151,7 +151,7 @@
                     <input type="hidden" name="id" value="<?php echo $id; ?>">
                     <input type="hidden" name="current_image" value="<?php echo $current_image; ?>">
 
-                    <input type="submit" name="submit" value="Update Food" class="btn-secondary">
+                    <input type="submit" name="submit" value="Update Food" class="btn">
                 </td>
             </tr>
         
@@ -167,8 +167,8 @@
 
                 //1. Get all the details from the form
                 $id = $_POST['id'];
-                $title = $_POST['title'];
-                $description = $_POST['description'];
+                $title = mysqli_real_escape_string($conn, $_POST['title']);
+                $description = mysqli_real_escape_string($conn, $_POST['description']);
                 $price = $_POST['price'];
                 $current_image = $_POST['current_image'];
                 $category = $_POST['category'];

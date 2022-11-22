@@ -1,5 +1,4 @@
-
-    <?php include('partials-front/menu.php'); ?>
+ <?php include('partials-front/menu.php'); ?>
 
     <!-- fOOD sEARCH Section Starts Here -->
     <section class="food-search text-center">
@@ -7,7 +6,7 @@
             <?php 
 
                 //Get the Search Keyword
-                $search = $_POST['search'];
+                $search = mysqli_real_escape_string($conn, $_POST['search']);
             
             ?>
 

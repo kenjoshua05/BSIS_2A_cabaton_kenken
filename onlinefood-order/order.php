@@ -1,4 +1,3 @@
-
 <?php include('partials-front/menu.php'); ?>
 
     <?php 
@@ -43,7 +42,7 @@
     <section class="food-search2">
         <div class="container">
             
-            <h2 class="text-center text-white">Fill this form to confirm your order.</h2>
+            <h2 class="text-center text-black">Fill this form to confirm your order.</h2>
 
             <form action="" method="POST" class="order">
                 <fieldset>
@@ -74,7 +73,7 @@
                         <h3><?php echo $title; ?></h3>
                         <input type="hidden" name="food" value="<?php echo $title; ?>">
 
-                        <p class="food-price">$<?php echo $price; ?></p>
+                        <p class="food-price">₱<?php echo $price; ?></p>
                         <input type="hidden" name="price" value="<?php echo $price; ?>">
 
                         <div class="order-label">Quantity</div>
@@ -120,10 +119,10 @@
 
                     $status = "Ordered";  // Ordered, On Delivery, Delivered, Cancelled
 
-                    $customer_name = $_POST['full-name'];
-                    $customer_contact = $_POST['contact'];
-                    $customer_email = $_POST['email'];
-                    $customer_address = $_POST['address'];
+                    $customer_name = mysqli_real_escape_string($conn, $_POST['full-name']);
+                    $customer_contact = mysqli_real_escape_string($conn, $_POST['contact']);
+                    $customer_email = mysqli_real_escape_string($conn, $_POST['email']);
+                    $customer_address = mysqli_real_escape_string($conn, $_POST['address']);
 
 
                     //Save the Order in Databaase
@@ -151,7 +150,7 @@
                     {
                         //Query Executed and Order Saved
                         $_SESSION['order'] = "<div class='success text-center'>Food Ordered Successfully.</div>";
-                        header('location:'.SITEURL);
+                        header('location:'.SITEURL.'summary.php');
                     }
                     else
                     {

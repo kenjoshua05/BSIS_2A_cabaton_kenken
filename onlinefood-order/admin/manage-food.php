@@ -76,9 +76,9 @@
                             {
                                 //get the values from individual columns
                                 $id = $row['id'];
-                                $title = $row['title'];
+                                $title = mysqli_real_escape_string($conn, $row['title']);
                                 $price = $row['price'];
-                                $image_name = $row['image_name'];
+                                $image_name = mysqli_real_escape_string($conn, $row['image_name']);
                                 $featured = $row['featured'];
                                 $active = $row['active'];
                                 ?>
@@ -86,7 +86,7 @@
                                 <tr>
                                     <td><?php echo $sn++; ?>. </td>
                                     <td><?php echo $title; ?></td>
-                                    <td>$<?php echo $price; ?></td>
+                                    <td>₱<?php echo $price; ?></td>
                                     <td>
                                         <?php  
                                             //CHeck whether we have image or not

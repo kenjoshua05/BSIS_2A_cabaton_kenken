@@ -21,21 +21,21 @@
                 <tr>
                     <td>Title: </td>
                     <td>
-                        <input type="text" name="title" placeholder="Title of the Food">
+                        <input type="text" name="title" placeholder="Title of the Food" required>
                     </td>
                 </tr>
 
                 <tr>
                     <td>Description: </td>
                     <td>
-                        <textarea name="description" cols="30" rows="5" placeholder="Description of the Food."></textarea>
+                        <textarea name="description" cols="30" rows="5" placeholder="Description of the Food." required></textarea>
                     </td>
                 </tr>
 
                 <tr>
                     <td>Price: </td>
                     <td>
-                        <input type="number" name="price">
+                        <input type="number" name="price" required>
                     </td>
                 </tr>
 
@@ -49,7 +49,7 @@
                 <tr>
                     <td>Category: </td>
                     <td>
-                        <select name="category">
+                        <select name="category" required>
 
                             <?php 
                                 //Create PHP Code to display categories from Database
@@ -98,16 +98,16 @@
                 <tr>
                     <td>Featured: </td>
                     <td>
-                        <input type="radio" name="featured" value="Yes"> Yes 
-                        <input type="radio" name="featured" value="No"> No
+                        <input type="radio" name="featured" value="Yes" required> Yes 
+                        <input type="radio" name="featured" value="No" required> No
                     </td>
                 </tr>
 
                 <tr>
                     <td>Active: </td>
                     <td>
-                        <input type="radio" name="active" value="Yes"> Yes 
-                        <input type="radio" name="active" value="No"> No
+                        <input type="radio" name="active" value="Yes" required> Yes 
+                        <input type="radio" name="active" value="No"required> No
                     </td>
                 </tr>
 
@@ -131,8 +131,8 @@
                 //echo "Clicked";
                 
                 //1. Get the DAta from Form
-                $title = $_POST['title'];
-                $description = $_POST['description'];
+                $title = mysqli_real_escape_string($conn, $_POST['title']);
+                $description = mysqli_real_escape_string($conn, $_POST['description']);
                 $price = $_POST['price'];
                 $category = $_POST['category'];
 
@@ -165,8 +165,8 @@
                     //Check Whether the Image is Selected or not and upload image only if selected
                     if($image_name!="")
                     {
-                        // Image is SElected
-                        //A. REnamge the Image
+                        // Image is Selected
+                        //A. Rename the Image
                         //Get the extension of selected image (jpg, png, gif, etc.)
                         $ext = end(explode('.', $image_name));
 
@@ -174,7 +174,7 @@
                         $image_name = "Food-Name-".rand(0000,9999).".".$ext; //New Image Name May Be "Food-Name-657.jpg"
 
                         //B. Upload the Image
-                        //Get the Src Path and DEstinaton path
+                        //Get the Src Path and Destinaton path
 
                         // Source path is the current location of the image
                         $src = $_FILES['image']['tmp_name'];
@@ -182,7 +182,7 @@
                         //Destination Path for the image to be uploaded
                         $dst = "../images/food/".$image_name;
 
-                        //Finally Uppload the food image
+                        //Finally Upload the food image
                         $upload = move_uploaded_file($src, $dst);
 
                         //check whether image uploaded of not

@@ -25,13 +25,13 @@
         <br><br>
 
         <!-- Add CAtegory Form Starts -->
-        <form action="" method="POST" enctype="multipart/form-data">
+        <form class="input-grou" action="" method="POST" enctype="multipart/form-data">
 
             <table class="tbl-30">
                 <tr>
                     <td>Title: </td>
                     <td>
-                        <input type="text" name="title" placeholder="Category Title">
+                        <input type="text" name="title" placeholder="Category Title" required>
                     </td>
                 </tr>
 

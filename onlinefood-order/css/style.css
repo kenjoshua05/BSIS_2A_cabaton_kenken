@@ -9,6 +9,9 @@
   margin: 0 auto;
   padding: 1%;
 }
+.container ul{
+  padding: 1%;
+}
 .img-responsive {
   width: 100%;
 }
@@ -21,12 +24,16 @@
 }
 .text-center {
   text-align: center;
+  color: green;
 }
 .text-left {
   text-align: left;
 }
 .text-white {
   color: white;
+}
+.text-white:hover{
+  color: black;
 }
 
 .clearfix {
@@ -39,7 +46,7 @@ a {
   text-decoration: none;
 }
 a:hover {
-  color: #5d9e5f;
+  color: green;
 }
 
 .btn {
@@ -49,13 +56,13 @@ a:hover {
   border-radius: 5px;
 }
 .btn-primary {
-  background-color: #5d9e5f;
+  background-color: red;
   color: white;
   cursor: pointer;
 }
 .btn-primary:hover {
   color: white;
-  background-color: #5d9e5f;
+  background-color: rgb(167, 25, 25);
 }
 h2 {
   color: #2f3542;
@@ -92,11 +99,11 @@ fieldset {
 /* CSS for navbar section */
 
 .logo {
-  width: 5%;
+  width: 9%;
   float: left;
 }
 .menu {
-  line-height: 60px;
+  line-height: 90px;
 }
 .menu ul {
   list-style-type: none; 
@@ -111,7 +118,7 @@ fieldset {
 /* CSS for Food SEarch Section */
 
 .food-search {
-  background-image: url(../images/bg.jpg);
+  background-image: url(../images/sbg.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -127,7 +134,7 @@ fieldset {
 }
 
 .food-search2 {
-  background-image: url(../images/bg.jpg);
+  background-image: url(../images/background.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;

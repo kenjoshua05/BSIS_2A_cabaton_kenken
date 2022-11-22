@@ -55,7 +55,7 @@
                 <tr>
                     <td>Title: </td>
                     <td>
-                        <input type="text" name="title" value="<?php echo $title; ?>">
+                        <input class="input-group" type="text" name="title" value="<?php echo $title; ?>">
                     </td>
                 </tr>
 
@@ -108,7 +108,7 @@
                     <td>
                         <input type="hidden" name="current_image" value="<?php echo $current_image; ?>">
                         <input type="hidden" name="id" value="<?php echo $id; ?>">
-                        <input type="submit" name="submit" value="Update Category" class="btn-secondary">
+                        <input type="submit" name="submit" value="Update Category" class="btn">
                     </td>
                 </tr>
 
@@ -123,7 +123,7 @@
                 //echo "Clicked";
                 //1. Get all the values from our form
                 $id = $_POST['id'];
-                $title = $_POST['title'];
+                $title = mysqli_real_escape_string($conn, $_POST['title']);
                 $current_image = $_POST['current_image'];
                 $featured = $_POST['featured'];
                 $active = $_POST['active'];
