@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 17, 2022 at 02:40 PM
+-- Generation Time: Nov 30, 2022 at 09:00 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -18,96 +18,113 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `tastybuds`
+-- Database: `onlinefoodorder`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `foods`
+-- Table structure for table `tbl_admin`
 --
 
-CREATE TABLE `foods` (
-  `id` int(11) NOT NULL,
-  `itemname` varchar(50) NOT NULL,
+CREATE TABLE `tbl_admin` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `full_name` varchar(100) NOT NULL,
+  `username` varchar(100) NOT NULL,
+  `password` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `tbl_admin`
+--
+
+INSERT INTO `tbl_admin` (`id`, `full_name`, `username`, `password`) VALUES
+(12, 'Administrator', 'admin', '202cb962ac59075b964b07152d234b70'),
+(13, 'Ken Cabaton', 'kentot', '202cb962ac59075b964b07152d234b70');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_category`
+--
+
+CREATE TABLE `tbl_category` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `title` varchar(100) NOT NULL,
+  `image_name` varchar(255) NOT NULL,
+  `featured` varchar(10) NOT NULL,
+  `active` varchar(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `tbl_category`
+--
+
+INSERT INTO `tbl_category` (`id`, `title`, `image_name`, `featured`, `active`) VALUES
+(21, 'Quick Meals', 'Food_Category_253.jpg', 'Yes', 'Yes'),
+(22, 'Hot Snacks', 'Food_Category_296.jpg', 'Yes', 'Yes'),
+(23, 'Sweets', 'Food_Category_728.jpg', 'Yes', 'Yes');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_food`
+--
+
+CREATE TABLE `tbl_food` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `title` varchar(100) NOT NULL,
   `description` text NOT NULL,
-  `price` varchar(50) NOT NULL,
-  `categories` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `price` decimal(10,2) NOT NULL,
+  `image_name` varchar(255) NOT NULL,
+  `category_id` int(10) UNSIGNED NOT NULL,
+  `featured` varchar(10) NOT NULL,
+  `active` varchar(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `foods`
+-- Dumping data for table `tbl_food`
 --
 
-INSERT INTO `foods` (`id`, `itemname`, `description`, `price`, `categories`) VALUES
-(2, 'hotdog', 'red', '50', 'fastfood');
+INSERT INTO `tbl_food` (`id`, `title`, `description`, `price`, `image_name`, `category_id`, `featured`, `active`) VALUES
+(21, 'Brownies', 'brown', '50.00', 'Food-Name-8666.jpg', 23, 'No', 'Yes'),
+(22, 'Rice Crispy Treats', 'crispy tapos lasang umoy', '30.00', 'Food-Name-8781.jpeg', 23, 'Yes', 'Yes'),
+(23, 'Cookies', 'payomo panot', '150.00', 'Food-Name-9619.jpg', 23, 'No', 'Yes'),
+(24, 'Donuts', 'donut na dakulu su lubot', '200.00', 'Food-Name-3529.jpg', 23, 'Yes', 'Yes'),
+(26, 'Lemon pepper wings', 'oki', '100.00', 'Food-Name-8903.jpg', 22, 'No', 'Yes'),
+(27, 'BBQ Chicken Wings', 'bbq', '100.00', 'Food-Name-6966.jpg', 22, 'Yes', 'Yes'),
+(28, 'Burger', 'mapapaugol ka sa sarap', '55.00', 'Food-Name-7924.jpg', 21, 'Yes', 'Yes');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `food_categories`
+-- Table structure for table `tbl_order`
 --
 
-CREATE TABLE `food_categories` (
-  `ID` int(11) NOT NULL,
-  `CategoryName` varchar(30) NOT NULL,
-  `Description` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+CREATE TABLE `tbl_order` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `food` varchar(150) NOT NULL,
+  `price` decimal(10,2) NOT NULL,
+  `qty` int(11) NOT NULL,
+  `total` decimal(10,2) NOT NULL,
+  `order_date` datetime NOT NULL,
+  `status` varchar(50) NOT NULL,
+  `customer_name` varchar(150) NOT NULL,
+  `customer_contact` varchar(20) NOT NULL,
+  `customer_email` varchar(150) NOT NULL,
+  `customer_address` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `food_categories`
+-- Dumping data for table `tbl_order`
 --
 
-INSERT INTO `food_categories` (`ID`, `CategoryName`, `Description`) VALUES
-(1, 'Hot _Snacks', 'Hot and Delicous'),
-(2, 'Quick_Meals', 'Quick and Easy');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `menu`
---
-
-CREATE TABLE `menu` (
-  `ID` int(11) NOT NULL,
-  `Item_Name` varchar(20) NOT NULL,
-  `Description` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `menu`
---
-
-INSERT INTO `menu` (`ID`, `Item_Name`, `Description`) VALUES
-(1, 'Fried Chicken With W', 'BBQ, Lemon Pepper'),
-(2, 'Brownies', 'Red Velvet, Coffee Crunch, Black and White');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `orders`
---
-
-CREATE TABLE `orders` (
-  `ID` int(11) NOT NULL,
-  `Item_id` int(11) NOT NULL,
-  `Price` varchar(4) NOT NULL,
-  `Qty` decimal(65,0) NOT NULL,
-  `Total` varchar(65) NOT NULL,
-  `Order_Date` int(10) NOT NULL,
-  `Status` varchar(30) NOT NULL,
-  `Customer_name` varchar(30) NOT NULL,
-  `Customer_contact` varchar(30) NOT NULL,
-  `Customer_email` varchar(30) NOT NULL,
-  `Customer_address` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `orders`
---
-
-INSERT INTO `orders` (`ID`, `Item_id`, `Price`, `Qty`, `Total`, `Order_Date`, `Status`, `Customer_name`, `Customer_contact`, `Customer_email`, `Customer_address`) VALUES
-(1, 3, '50', '50', '50', 0, '', '', '', 'kentot@gmail.com', 'United States of albay');
+INSERT INTO `tbl_order` (`id`, `food`, `price`, `qty`, `total`, `order_date`, `status`, `customer_name`, `customer_contact`, `customer_email`, `customer_address`) VALUES
+(25, 'Brownies', '50.00', 1, '50.00', '2022-11-29 03:03:45', 'Ordered', 'kenken', '0985903809', 'ken@gmail.com', 'ghwdvagjwdjg'),
+(26, 'Rice Crispy Treats', '30.00', 1, '30.00', '2022-11-29 04:02:28', 'Delivered', 'ken', '5r262123512', 'kenjoshua@gmail.com', 'jwqegfqfyqfiuy12'),
+(27, 'Rice Crispy Treats', '30.00', 1, '30.00', '2022-11-29 08:57:08', 'Ordered', 'ken', '10091289817', 'ken@gmail.com', 'dvhavhhdsv'),
+(28, 'Rice Crispy Treats', '30.00', 1, '30.00', '2022-11-29 12:51:23', 'Ordered', 'ken', '10091289817', 'ken@gmail.com', 'jhsgjha'),
+(29, 'Lemon pepper wings', '100.00', 1, '100.00', '2022-11-29 01:48:37', 'Ordered', 'keke', '12345678910', 'ken@gmail.com', 'Polabgui\r\n');
 
 -- --------------------------------------------------------
 
@@ -116,89 +133,90 @@ INSERT INTO `orders` (`ID`, `Item_id`, `Price`, `Qty`, `Total`, `Order_Date`, `S
 --
 
 CREATE TABLE `users` (
-  `ID` int(11) NOT NULL,
-  `First_name` varchar(30) NOT NULL,
-  `Last_name` varchar(30) NOT NULL,
-  `Street` varchar(30) NOT NULL,
-  `City` varchar(30) NOT NULL,
-  `Zip` varchar(30) NOT NULL,
-  `Phone` varchar(30) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `user_id` int(11) NOT NULL,
+  `customer_name` varchar(222) NOT NULL,
+  `username` varchar(100) NOT NULL,
+  `customer_email` varchar(100) NOT NULL,
+  `customer_contact` varchar(222) NOT NULL,
+  `customer_address` text NOT NULL,
+  `password` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`ID`, `First_name`, `Last_name`, `Street`, `City`, `Zip`, `Phone`) VALUES
-(1, 'ken joshua', 'cabaton', 'zone 1', 'Polagui', '4506', '09569320490');
+INSERT INTO `users` (`user_id`, `customer_name`, `username`, `customer_email`, `customer_contact`, `customer_address`, `password`) VALUES
+(1, 'arthur nery', 'arthur', 'arthur@gmail.com', '09469410298', 'Polangui', '202cb962ac59075b964b07152d234b70'),
+(2, 'kenken', 'ken', 'ken@gmail.com', '09469410298', 'Polangui', '202cb962ac59075b964b07152d234b70');
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `foods`
+-- Indexes for table `tbl_admin`
 --
-ALTER TABLE `foods`
+ALTER TABLE `tbl_admin`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `food_categories`
+-- Indexes for table `tbl_category`
 --
-ALTER TABLE `food_categories`
-  ADD PRIMARY KEY (`ID`);
+ALTER TABLE `tbl_category`
+  ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `menu`
+-- Indexes for table `tbl_food`
 --
-ALTER TABLE `menu`
-  ADD PRIMARY KEY (`ID`);
+ALTER TABLE `tbl_food`
+  ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `orders`
+-- Indexes for table `tbl_order`
 --
-ALTER TABLE `orders`
-  ADD PRIMARY KEY (`ID`);
+ALTER TABLE `tbl_order`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
-  ADD PRIMARY KEY (`ID`);
+  ADD PRIMARY KEY (`user_id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT for table `foods`
+-- AUTO_INCREMENT for table `tbl_admin`
 --
-ALTER TABLE `foods`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+ALTER TABLE `tbl_admin`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
--- AUTO_INCREMENT for table `food_categories`
+-- AUTO_INCREMENT for table `tbl_category`
 --
-ALTER TABLE `food_categories`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+ALTER TABLE `tbl_category`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
--- AUTO_INCREMENT for table `menu`
+-- AUTO_INCREMENT for table `tbl_food`
 --
-ALTER TABLE `menu`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+ALTER TABLE `tbl_food`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
--- AUTO_INCREMENT for table `orders`
+-- AUTO_INCREMENT for table `tbl_order`
 --
-ALTER TABLE `orders`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+ALTER TABLE `tbl_order`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
