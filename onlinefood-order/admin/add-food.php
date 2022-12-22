@@ -1,8 +1,8 @@
 <?php include('partials/menu.php'); ?>
 
-<div class="main-content">
-    <div class="wrapper">
-        <h1>Add Food</h1>
+<div class="main">
+    <div class="container">
+       <h1><b> Add Food</b></h1>
 
         <br><br>
 
@@ -14,42 +14,42 @@
             }
         ?>
 
-        <form action="" method="POST" enctype="multipart/form-data">
+        <form action="" method="POST" class="form" enctype="multipart/form-data">
         
-            <table class="tbl-30">
+            <table>
 
-                <tr>
+                <tr >
                     <td>Title: </td>
                     <td>
-                        <input type="text" name="title" placeholder="Title of the Food" required>
+                        <input class="input-box" type="text" name="title" placeholder="Title of the Food" required>
                     </td>
                 </tr>
 
                 <tr>
                     <td>Description: </td>
                     <td>
-                        <textarea name="description" cols="30" rows="5" placeholder="Description of the Food." required></textarea>
+                        <textarea class="input-desc" name="description" cols="30" rows="5" placeholder="Description of the Food." required></textarea>
                     </td>
                 </tr>
 
                 <tr>
                     <td>Price: </td>
                     <td>
-                        <input type="number" name="price" required>
+                        <input class="input-box" min="1" type="number" name="price" required>
                     </td>
                 </tr>
 
                 <tr>
                     <td>Select Image: </td>
                     <td>
-                        <input type="file" name="image">
+                        <input  class="file" type="file" name="image">
                     </td>
                 </tr>
 
                 <tr>
                     <td>Category: </td>
                     <td>
-                        <select name="category" required>
+                        <select class="select-box" name="category" required>
 
                             <?php 
                                 //Create PHP Code to display categories from Database
@@ -98,22 +98,22 @@
                 <tr>
                     <td>Featured: </td>
                     <td>
-                        <input type="radio" name="featured" value="Yes" required> Yes 
-                        <input type="radio" name="featured" value="No" required> No
+                        <input class="yes" type="radio" name="featured" value="Yes" required> Yes 
+                        <input class="no" type="radio" name="featured" value="No" required> No
                     </td>
                 </tr>
 
                 <tr>
                     <td>Active: </td>
                     <td>
-                        <input type="radio" name="active" value="Yes" required> Yes 
-                        <input type="radio" name="active" value="No"required> No
+                        <input class="yes" type="radio" name="active" value="Yes" required> Yes 
+                        <input class="no" type="radio" name="active" value="No"required> No
                     </td>
                 </tr>
 
                 <tr>
                     <td colspan="2">
-                        <input type="submit" name="submit" value="Add Food" class="btn-secondary">
+                        <input type="submit" name="submit" value="Add Food" class="button">
                     </td>
                 </tr>
 

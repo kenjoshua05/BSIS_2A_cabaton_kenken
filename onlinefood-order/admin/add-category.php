@@ -1,8 +1,8 @@
 <?php include('partials/menu.php'); ?>
 
-<div class="main-content">
-    <div class="wrapper">
-        <h1>Add Category</h1>
+<div class="main">
+    <div class="container">
+        <h1><b>Add Category</b></h1>
 
         <br><br>
 
@@ -25,42 +25,42 @@
         <br><br>
 
         <!-- Add CAtegory Form Starts -->
-        <form class="input-grou" action="" method="POST" enctype="multipart/form-data">
+        <form class="form" action="" method="POST" enctype="multipart/form-data">
 
-            <table class="tbl-30">
+            <table>
                 <tr>
                     <td>Title: </td>
                     <td>
-                        <input type="text" name="title" placeholder="Category Title" required>
+                        <input class="input-box" type="text" name="title" placeholder="Category Title" required>
                     </td>
                 </tr>
 
                 <tr>
                     <td>Select Image: </td>
                     <td>
-                        <input type="file" name="image">
+                        <input class="file" type="file" name="image">
                     </td>
                 </tr>
 
                 <tr>
                     <td>Featured: </td>
                     <td>
-                        <input type="radio" name="featured" value="Yes"> Yes 
-                        <input type="radio" name="featured" value="No"> No 
+                        <input class="yes" type="radio" name="featured" value="Yes"> Yes 
+                        <input class="no" type="radio" name="featured" value="No"> No 
                     </td>
                 </tr>
 
                 <tr>
                     <td>Active: </td>
                     <td>
-                        <input type="radio" name="active" value="Yes"> Yes 
-                        <input type="radio" name="active" value="No"> No 
+                        <input class="yes" type="radio" name="active" value="Yes"> Yes 
+                        <input class="no" type="radio" name="active" value="No"> No 
                     </td>
                 </tr>
 
                 <tr>
                     <td colspan="2">
-                        <input type="submit" name="submit" value="Add Category" class="btn-secondary">
+                        <input class="button" name="submit" type="submit" name="submit" value="Add Category">
                     </td>
                 </tr>
 

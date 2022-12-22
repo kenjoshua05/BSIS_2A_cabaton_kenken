@@ -1,8 +1,8 @@
 <?php include('partials/menu.php'); ?>
 
-<div class="main-content">
-    <div class="wrapper">
-        <h1>Update Admin</h1>
+<div class="main">
+    <div class="container">
+        <h1><b>Update Admin</b></h1>
 
         <br><br>
 
@@ -41,27 +41,27 @@
         ?>
 
 
-        <form action="" method="POST">
+        <form class="form" action="" method="POST">
 
-            <table class="tbl-30">
+            <table>
                 <tr>
                     <td>Full Name: </td>
                     <td>
-                        <input type="text" name="full_name" value="<?php echo $full_name; ?>">
+                        <input class="input-box" type="text" name="full_name" value="<?php echo $full_name; ?>">
                     </td>
                 </tr>
 
                 <tr>
                     <td>Username: </td>
                     <td>
-                        <input type="text" name="username" value="<?php echo $username; ?>">
+                        <input class="input-box" type="text" name="username" value="<?php echo $username; ?>">
                     </td>
                 </tr>
 
                 <tr>
                     <td colspan="2">
                         <input type="hidden" name="id" value="<?php echo $id; ?>">
-                        <input type="submit" name="submit" value="Update Admin" class="btn-secondary">
+                        <input type="submit" name="submit" value="Update Admin" class="button">
                     </td>
                 </tr>
 

@@ -1,8 +1,8 @@
 <?php include('partials/menu.php'); ?>
 
-<div class="main-content">
-    <div class="wrapper">
-        <h1>Update Order</h1>
+<div class="main">
+    <div class="container">
+        <h1><b>Update Order</b></h1>
         <br><br>
 
 
@@ -51,32 +51,32 @@
         
         ?>
 
-        <form action="" method="POST">
+        <form class="form" action="" method="POST">
         
-            <table class="tbl-30">
+            <table>
                 <tr>
                     <td>Food Name</td>
-                    <td><b> <?php echo $food; ?> </b></td>
+                    <td class="price"><b> <?php echo $food; ?> </b></td>
                 </tr>
 
                 <tr>
                     <td>Price</td>
-                    <td>
-                        <b> $ <?php echo $price; ?></b>
+                    <td class="price">
+                        <b> ₱ <?php echo $price; ?></b>
                     </td>
                 </tr>
 
-                <tr class="input-group">
+                <tr>
                     <td>Qty</td>
                     <td>
-                        <input class="input-group" type="number" name="qty" value="<?php echo $qty; ?>">
+                        <input class="input-box" type="number" min="1" name="qty" value="<?php echo $qty; ?>">
                     </td>
                 </tr>
 
                 <tr>
                     <td>Status</td>
                     <td>
-                        <select class="input-group" name="status">
+                        <select class="select-box" name="status">
                             <option <?php if($status=="Ordered"){echo "selected";} ?> value="Ordered">Ordered</option>
                             <option <?php if($status=="On Delivery"){echo "selected";} ?> value="On Delivery">On Delivery</option>
                             <option <?php if($status=="Delivered"){echo "selected";} ?> value="Delivered">Delivered</option>
@@ -88,39 +88,40 @@
                 <tr>
                     <td>Customer Name: </td>
                     <td>
-                        <input class="input-group" type="text" name="customer_name" value="<?php echo $customer_name; ?>">
+                        <input class="input-box" type="text" name="customer_name" value="<?php echo $customer_name; ?>">
                     </td>
                 </tr>
 
                 <tr>
                     <td>Customer Contact: </td>
                     <td>
-                        <input class="input-group" type="text" name="customer_contact" value="<?php echo $customer_contact; ?>">
+                        <input class="input-box" type="text" name="customer_contact" value="<?php echo $customer_contact; ?>">
                     </td>
                 </tr>
 
                 <tr>
                     <td>Customer Email: </td>
                     <td>
-                        <input class="input-group" class="input-group" type="text" name="customer_email" value="<?php echo $customer_email; ?>">
+                        <input class="input-box" type="text" name="customer_email" value="<?php echo $customer_email; ?>">
                     </td>
                 </tr>
 
                 <tr>
                     <td>Customer Address: </td>
                     <td>
-                        <textarea class="desc" name="customer_address" cols="30" rows="5"><?php echo $customer_address; ?></textarea>
+                        <textarea class="input-desc" name="customer_address" cols="30" rows="5" required><?php echo $customer_address; ?></textarea>
                     </td>
                 </tr>
 
                 <tr>
-                    <td clospan="2">
+                    <td>
                         <input type="hidden" name="id" value="<?php echo $id; ?>">
                         <input type="hidden" name="price" value="<?php echo $price; ?>">
-
-                        <input type="submit" name="submit" value="Update Order" class="btn">
                     </td>
                 </tr>
+            <td colspan="2">
+                        <input type="submit" name="submit" value="Update Order" class="button">
+                    </td>
             </table>
         
         </form>

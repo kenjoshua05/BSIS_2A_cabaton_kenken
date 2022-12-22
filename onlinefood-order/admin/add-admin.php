@@ -1,8 +1,8 @@
 <?php include('partials/menu.php'); ?>
 
-<div class="main-content">
-    <div class="wrapper">
-        <h1>Add Admin</h1>
+<div class="main">
+    <div class="container">
+        <h1><b>Add Admin</b></h1>
 
         <br><br>
 
@@ -14,33 +14,33 @@
             }
         ?>
 
-        <form action="" method="POST">
+        <form class="form" action="" method="POST">
 
-            <table class="tbl-30">
+            <table>
                 <tr>
                     <td>Full Name: </td>
                     <td>
-                        <input type="text" name="full_name" placeholder="Enter Your Name">
+                        <input class="input-box" type="text" name="full_name" placeholder="Enter Your Name">
                     </td>
                 </tr>
 
                 <tr>
                     <td>Username: </td>
                     <td>
-                        <input type="text" name="username" placeholder="Your Username">
+                        <input class="input-box" type="text" name="username" placeholder="Your Username">
                     </td>
                 </tr>
 
                 <tr>
                     <td>Password: </td>
                     <td>
-                        <input type="password" name="password" placeholder="Your Password">
+                        <input class="input-box" type="password" name="password" placeholder="Your Password">
                     </td>
                 </tr>
 
                 <tr>
                     <td colspan="2">
-                        <input type="submit" name="submit" value="Add Admin" class="btn-secondary">
+                        <input type="submit" name="submit" value="Add Admin" class="button">
                     </td>
                 </tr>
 

@@ -2,6 +2,7 @@
 
 <html class="body">
     <head>
+        <link rel="icon" href="../images/login.png">
         <title>Login - Food Order System</title>
         <link rel="stylesheet" href="../css/admin.css">
     </head>
@@ -30,12 +31,12 @@
             <!-- Login Form Starts HEre -->
             <form action="" method="POST" class="text-center">
             Username: <br>
-            <input class="input-group" type="text" name="username" placeholder="Enter Username"><br><br>
+            <input class="input-box" type="text" name="username" placeholder="Enter Username"><br><br>
 
             Password: <br>
-            <input class="input-group" type="password" name="password" placeholder="Enter Password"><br><br>
+            <input class="input-box" type="password" name="password" placeholder="Enter Password"><br><br>
 
-            <input class="btn" type="submit" name="submit" value="Login" class="btn-primary">
+            <input class="button" type="submit" name="submit" value="Login">
             <br><br>
             </form>
             <!-- Login Form Ends HEre -->

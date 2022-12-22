@@ -1,8 +1,8 @@
 <?php include('partials/menu.php'); ?>
 
-<div class="main-content">
-    <div class="wrapper">
-        <h1>Update Category</h1>
+<div class="main">
+    <div class="container">
+        <h1><b>Update Category</b></h1>
 
         <br><br>
 
@@ -49,13 +49,13 @@
         
         ?>
 
-        <form action="" method="POST" enctype="multipart/form-data">
+        <form class="form" action="" method="POST" enctype="multipart/form-data">
 
-            <table class="tbl-30">
+            <table>
                 <tr>
                     <td>Title: </td>
                     <td>
-                        <input class="input-group" type="text" name="title" value="<?php echo $title; ?>">
+                        <input  class="input-box" type="text" name="title" value="<?php echo $title; ?>">
                     </td>
                 </tr>
 
@@ -67,7 +67,7 @@
                             {
                                 //Display the Image
                                 ?>
-                                <img src="<?php echo SITEURL; ?>images/category/<?php echo $current_image; ?>" width="150px">
+                                <img src="<?php echo SITEURL; ?>images/category/<?php echo $current_image; ?>" width="180px">
                                 <?php
                             }
                             else
@@ -82,25 +82,25 @@
                 <tr>
                     <td>New Image: </td>
                     <td>
-                        <input type="file" name="image">
+                        <input class="file"  type="file" name="image">
                     </td>
                 </tr>
 
                 <tr>
                     <td>Featured: </td>
                     <td>
-                        <input <?php if($featured=="Yes"){echo "checked";} ?> type="radio" name="featured" value="Yes"> Yes 
+                        <input class="yes" <?php if($featured=="Yes"){echo "checked";} ?> type="radio" name="featured" value="Yes"> Yes 
 
-                        <input <?php if($featured=="No"){echo "checked";} ?> type="radio" name="featured" value="No"> No 
+                        <input class="no" <?php if($featured=="No"){echo "checked";} ?> type="radio" name="featured" value="No"> No 
                     </td>
                 </tr>
 
                 <tr>
                     <td>Active: </td>
                     <td>
-                        <input <?php if($active=="Yes"){echo "checked";} ?> type="radio" name="active" value="Yes"> Yes 
+                        <input class="yes" <?php if($active=="Yes"){echo "checked";} ?> type="radio" name="active" value="Yes"> Yes 
 
-                        <input <?php if($active=="No"){echo "checked";} ?> type="radio" name="active" value="No"> No 
+                        <input class="no" <?php if($active=="No"){echo "checked";} ?> type="radio" name="active" value="No"> No 
                     </td>
                 </tr>
 
@@ -108,9 +108,15 @@
                     <td>
                         <input type="hidden" name="current_image" value="<?php echo $current_image; ?>">
                         <input type="hidden" name="id" value="<?php echo $id; ?>">
-                        <input type="submit" name="submit" value="Update Category" class="btn">
                     </td>
                 </tr>
+                <tr>
+                    <td colspan="2">
+                        <input type="submit" name="submit" value="Update Category" class="button">
+                    </td>
+                </tr>
+
+                
 
             </table>
 

@@ -61,8 +61,8 @@
                         <th>Actions</th>
                     </tr>
 
-                    
-                    <?php 
+                     
+                   <?php 
                         //Query to Get all Admin
                         $sql = "SELECT * FROM tbl_admin";
                         //Execute the Query

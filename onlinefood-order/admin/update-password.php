@@ -1,8 +1,8 @@
 <?php include('partials/menu.php'); ?>
 
-<div class="main-content">
-    <div class="wrapper">
-        <h1>Change Password</h1>
+<div class="main">
+    <div class="container">
+        <h1><b>Change Password</b></h1>
         <br><br>
 
         <?php 
@@ -12,34 +12,34 @@
             }
         ?>
 
-        <form action="" method="POST">
+        <form class="form" action="" method="POST">
         
-            <table class="tbl-30">
+            <table>
                 <tr>
                     <td>Current Password: </td>
                     <td>
-                        <input type="password" name="current_password" placeholder="Current Password">
+                        <input class="input-box" type="password" name="current_password" placeholder="Current Password">
                     </td>
                 </tr>
 
                 <tr>
                     <td>New Password:</td>
                     <td>
-                        <input type="password" name="new_password" placeholder="New Password">
+                        <input class="input-box" type="password" name="new_password" placeholder="New Password">
                     </td>
                 </tr>
 
                 <tr>
                     <td>Confirm Password: </td>
                     <td>
-                        <input type="password" name="confirm_password" placeholder="Confirm Password">
+                        <input class="input-box" type="password" name="confirm_password" placeholder="Confirm Password">
                     </td>
                 </tr>
 
                 <tr>
                     <td colspan="2">
                         <input type="hidden" name="id" value="<?php echo $id; ?>">
-                        <input type="submit" name="submit" value="Change Password" class="btn-secondary">
+                        <input type="submit" name="submit" value="Change Password" class="button">
                     </td>
                 </tr>
 

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 08, 2022 at 03:08 PM
+-- Generation Time: Nov 30, 2022 at 09:00 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -120,14 +120,11 @@ CREATE TABLE `tbl_order` (
 --
 
 INSERT INTO `tbl_order` (`id`, `food`, `price`, `qty`, `total`, `order_date`, `status`, `customer_name`, `customer_contact`, `customer_email`, `customer_address`) VALUES
-(11, 'Smoky BBQ Pizza', '9.00', 5, '45.00', '2022-10-29 04:01:09', 'Cancelled', 'Mary Grace', '09469410298', 'mary@gmail.com', 'United States of Albay'),
-(12, 'Mozzarella-Sticks With Dipping Sauce', '4.00', 10, '40.00', '2022-11-05 01:35:58', 'Delivered', 'ken', '09469650290', 'ken@gmail.com', 'Polangui Albay'),
-(13, 'Mozzarella-Sticks With Dipping Sauce', '4.00', 1, '4.00', '2022-11-05 01:45:04', 'Delivered', 'ken', '10091289817', 'kenhjs@gmail.com', 'thafsjhG'),
-(14, 'Cheeseburger', '65.00', 1, '65.00', '2022-11-05 04:22:22', 'Delivered', 'ken', '09045834951', 'abcd@gmail.com', 'hqwehqgwhgq'),
-(15, 'Ham Burger', '60.00', 1, '60.00', '2022-11-06 02:12:58', 'On Delivery', 'jjhsjhd\'', 'hghjs\'', 'ken@gmail.com', 'hdhagd\''),
-(16, 'Cheeseburger', '65.00', 1, '65.00', '2022-11-06 02:35:55', 'On Delivery', 'ken', '10091289817', 'ken@gmail.com', 'Polangui Albay'),
-(17, 'Chicken Wrap', '100.00', 3, '300.00', '2022-11-06 12:02:43', 'Delivered', 'kenken', '09469410298', 'ken@gmail.com', 'ehebj'),
-(18, 'Grilled Cheese Sandwich', '30.00', 3, '90.00', '2022-11-07 11:06:50', 'Delivered', 'kc', '100912898747', 'kc@gmail.com', 'Polangui Albay');
+(25, 'Brownies', '50.00', 1, '50.00', '2022-11-29 03:03:45', 'Ordered', 'kenken', '0985903809', 'ken@gmail.com', 'ghwdvagjwdjg'),
+(26, 'Rice Crispy Treats', '30.00', 1, '30.00', '2022-11-29 04:02:28', 'Delivered', 'ken', '5r262123512', 'kenjoshua@gmail.com', 'jwqegfqfyqfiuy12'),
+(27, 'Rice Crispy Treats', '30.00', 1, '30.00', '2022-11-29 08:57:08', 'Ordered', 'ken', '10091289817', 'ken@gmail.com', 'dvhavhhdsv'),
+(28, 'Rice Crispy Treats', '30.00', 1, '30.00', '2022-11-29 12:51:23', 'Ordered', 'ken', '10091289817', 'ken@gmail.com', 'jhsgjha'),
+(29, 'Lemon pepper wings', '100.00', 1, '100.00', '2022-11-29 01:48:37', 'Ordered', 'keke', '12345678910', 'ken@gmail.com', 'Polabgui\r\n');
 
 -- --------------------------------------------------------
 
@@ -136,11 +133,22 @@ INSERT INTO `tbl_order` (`id`, `food`, `price`, `qty`, `total`, `order_date`, `s
 --
 
 CREATE TABLE `users` (
-  `users_id` int(11) NOT NULL,
-  `users_uid` tinytext NOT NULL,
-  `users_email` tinytext NOT NULL,
-  `users_pwd` longtext NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `user_id` int(11) NOT NULL,
+  `customer_name` varchar(222) NOT NULL,
+  `username` varchar(100) NOT NULL,
+  `customer_email` varchar(100) NOT NULL,
+  `customer_contact` varchar(222) NOT NULL,
+  `customer_address` text NOT NULL,
+  `password` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`user_id`, `customer_name`, `username`, `customer_email`, `customer_contact`, `customer_address`, `password`) VALUES
+(1, 'arthur nery', 'arthur', 'arthur@gmail.com', '09469410298', 'Polangui', '202cb962ac59075b964b07152d234b70'),
+(2, 'kenken', 'ken', 'ken@gmail.com', '09469410298', 'Polangui', '202cb962ac59075b964b07152d234b70');
 
 --
 -- Indexes for dumped tables
@@ -174,7 +182,7 @@ ALTER TABLE `tbl_order`
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
-  ADD PRIMARY KEY (`users_id`);
+  ADD PRIMARY KEY (`user_id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -202,13 +210,13 @@ ALTER TABLE `tbl_food`
 -- AUTO_INCREMENT for table `tbl_order`
 --
 ALTER TABLE `tbl_order`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `users_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

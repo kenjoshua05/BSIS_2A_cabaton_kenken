@@ -102,6 +102,10 @@ fieldset {
   width: 9%;
   float: left;
 }
+.profile{
+  width: 9%;
+  float: right;
+}
 .menu {
   line-height: 90px;
 }
@@ -158,6 +162,9 @@ fieldset {
   width: 28%;
   float: left;
   margin: 2%;
+}
+.box-3:hover{
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
 /* CSS for Food Menu */
@@ -220,6 +227,49 @@ fieldset {
   margin-bottom: 1%;
   font-weight: bold;
 }
+/*CSS FOR YOUR ORDER*/
+*{
+  margin:0;
+  padding: 0;
+  outline: 0;
+ }
+ 
+ table{
+  position: absolute;
+  z-index: 2;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  width: 60%; 
+  border-collapse: collapse;
+  border-spacing: 0;
+  box-shadow: 0 2px 15px rgba(64,64,64,.7);
+  border-radius: 12px 12px 0 0;
+  overflow: hidden;
+ 
+ }
+ td , th{
+  padding: 15px 20px;
+  text-align: center;
+  
+ 
+ }
+ th{
+  background-color: orange;
+  color: #fafafa;
+  font-family: 'Open Sans',Sans-serif;
+  font-weight: 200;
+  text-transform: uppercase;
+ 
+ }
+ tr{
+  width: 100%;
+  background-color: #fafafa;
+  font-family: 'Montserrat', sans-serif;
+ }
+ tr:nth-child(even){
+  background-color: #eeeeee;
+ }
 
 /* CSS for Mobile Size or Smaller Screen */
 

@@ -1,6 +1,6 @@
 <?php include('partials/menu.php'); ?>
 
-<div class="main-content">
+<div class="filter">
     <div class="wrapper">
         <h1>Manage Food Items</h1>
 
@@ -45,7 +45,7 @@
                 ?>
 
                 <table class="tbl-full">
-                    <tr>
+                    <tr class="table_row">
                         <th>S.N.</th>
                         <th>Title</th>
                         <th>Price</th>

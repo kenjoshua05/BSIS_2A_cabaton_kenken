@@ -33,33 +33,33 @@
 ?>
 
 
-<div class="main-content">
-    <div class="wrapper">
-        <h1>Update Food</h1>
+<div class="main">
+    <div class="container">
+        <h1><b>Update Food</b></h1>
         <br><br>
 
-        <form action="" method="POST" enctype="multipart/form-data">
+        <form class="form" action="" method="POST" enctype="multipart/form-data">
         
-        <table class="tbl-30">
+        <table>
 
             <tr>
                 <td>Title: </td>
                 <td>
-                    <input class="input-group" type="text" name="title" value="<?php echo $title; ?>">
+                    <input class="input-box" type="text" name="title" value="<?php echo $title; ?>">
                 </td>
             </tr>
 
             <tr>
                 <td>Description: </td>
                 <td>
-                    <textarea class="desc" name="description" cols="30" rows="5"><?php echo $description; ?></textarea>
+                    <textarea class="input-desc" name="description" cols="30" rows="5"><?php echo $description; ?></textarea>
                 </td>
             </tr>
 
             <tr>
                 <td>Price: </td>
                 <td>
-                    <input class="input-group" type="number" name="price" value="<?php echo $price; ?>">
+                    <input class="input-box" min="1" type="number" name="price" value="<?php echo $price; ?>">
                 </td>
             </tr>
 
@@ -76,7 +76,7 @@
                         {
                             //Image Available
                             ?>
-                            <img src="<?php echo SITEURL; ?>images/food/<?php echo $current_image; ?>" width="150px">
+                            <img src="<?php echo SITEURL; ?>images/food/<?php echo $current_image; ?>" width="180px">
                             <?php
                         }
                     ?>
@@ -86,14 +86,14 @@
             <tr>
                 <td>Select New Image: </td>
                 <td>
-                    <input type="file" name="image">
+                    <input class="file" type="file" name="image">
                 </td>
             </tr>
 
             <tr>
                 <td>Category: </td>
                 <td>
-                    <select class="input-group"name="category">
+                    <select class="select-box" name="category">
 
                         <?php 
                             //Query to Get ACtive Categories
@@ -133,16 +133,16 @@
             <tr>
                 <td>Featured: </td>
                 <td>
-                    <input <?php if($featured=="Yes") {echo "checked";} ?> type="radio" name="featured" value="Yes"> Yes 
-                    <input <?php if($featured=="No") {echo "checked";} ?> type="radio" name="featured" value="No"> No 
+                    <input class="yes" <?php if($featured=="Yes") {echo "checked";} ?> type="radio" name="featured" value="Yes"> Yes 
+                    <input class="no" <?php if($featured=="No") {echo "checked";} ?> type="radio" name="featured" value="No"> No 
                 </td>
             </tr>
 
             <tr>
                 <td>Active: </td>
                 <td>
-                    <input <?php if($active=="Yes") {echo "checked";} ?> type="radio" name="active" value="Yes"> Yes 
-                    <input <?php if($active=="No") {echo "checked";} ?> type="radio" name="active" value="No"> No 
+                    <input class="yes" <?php if($active=="Yes") {echo "checked";} ?> type="radio" name="active" value="Yes"> Yes 
+                    <input class="no" <?php if($active=="No") {echo "checked";} ?> type="radio" name="active" value="No"> No 
                 </td>
             </tr>
 
@@ -150,8 +150,12 @@
                 <td>
                     <input type="hidden" name="id" value="<?php echo $id; ?>">
                     <input type="hidden" name="current_image" value="<?php echo $current_image; ?>">
+                </td>
+            </tr>
 
-                    <input type="submit" name="submit" value="Update Food" class="btn">
+            <tr>
+                <td colspan="2">
+                    <input type="submit" name="submit" value="Update Food" class="button">
                 </td>
             </tr>
         

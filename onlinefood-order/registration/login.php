@@ -2,6 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="icon" href="../images/login.png">
   <title>Tasty Buds Cuisine</title>
   <link rel="stylesheet" type="text/css" href="style.css">
 </head>
